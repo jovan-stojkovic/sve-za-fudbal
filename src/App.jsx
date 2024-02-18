@@ -1,7 +1,7 @@
+import "./Styles.scss";
+import Home from "./pages/Home";
 const App = () => {
-  return ( <>
-  app
-  </> );
-}
- 
+  return <Home />;
+};
+
 export default App;

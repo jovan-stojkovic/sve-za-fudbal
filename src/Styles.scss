@@ -1,7 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+.ubuntu-regular {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+}
+
+$gray: rgb(146, 146, 146);
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+}
+
+//NAVBAR STYLING
+
+nav {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  transition: 0.5s ease;
+
+  .nav-container {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1000px;
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .logoimg-container {
+        height: 50px;
+        width: 70px;
+        background-image: url("https://www.iconbolt.com/iconsets/hawcons-filled/soccer-court.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        transition: 0.5s ease;
+      }
+
+      .logo-headline {
+        font-size: 20px;
+        color: $gray;
+        font-weight: 500;
+        letter-spacing: 2px;
+        transition: 0.5s ease;
+      }
+    }
+
+    .navbar-right {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 50px;
+
+      .navbar-links {
+        display: flex;
+        gap: 10px;
+
+        .nav-l {
+          all: unset;
+          transition: 0.1s;
+          width: 80px;
+          color: $gray;
+          font-weight: 500;
+
+          &:hover {
+            cursor: pointer;
+            font-weight: 700;
+            transition: 0.1s;
+            color: white;
+          }
+        }
+        #ostalo {
+          position: relative;
+          .hidden-container {
+            position: absolute;
+            top: 20;
+            left: -20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 190px;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: rgba(30, 30, 30, 0.8);
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            visibility: hidden;
+            transition: 0.5s;
+            opacity: 0;
+            z-index: 4;
+            scale: 0.5;
+
+            a {
+              all: unset;
+              color: $gray;
+
+              &:hover {
+                cursor: pointer;
+                font-weight: 700;
+                transition: 0.1s;
+              }
+            }
+          }
+
+          .hidden-container.show {
+            visibility: visible;
+            transition: 0.5s;
+            opacity: 1;
+            z-index: 4;
+            scale: 1;
+
+            a {
+              all: unset;
+
+              &:hover {
+                cursor: pointer;
+                font-weight: 700;
+                transition: 0.1s;
+              }
+            }
+          }
+        }
+      }
+
+      .navbar-buttons {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        button {
+          all: unset;
+          height: 20px;
+          width: 20px;
+          transition: 0.1s;
+
+          &:hover {
+            cursor: pointer;
+            scale: 1.1;
+            transition: 0.1s;
+          }
+
+          img {
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//NAVBAR SCROLL STYLING
+
+nav.scroll {
+  background-color: rgba(255, 255, 255, 0.323);
+  backdrop-filter: blur(10px);
+  transition: 0.5s ease;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  .nav-container {
+    .logo-container {
+      .logoimg-container {
+        background-image: url("https://www.iconbolt.com/iconsets/hawcons-stroke/soccer-court.svg");
+        transition: 0.5s ease;
+      }
+
+      .logo-headline {
+        color: black;
+        transition: 0.5s ease;
+      }
+    }
+
+    .navbar-right {
+      .navbar-links {
+        .nav-l {
+          transition: 0.5s ease;
+          color: black;
+
+          &:hover {
+            transition: 0.5s ease;
+          }
+        }
+        #ostalo {
+          .hidden-container {
+            background-color: rgba(230, 230, 230, 0.9);
+            backdrop-filter: blur(2px);
+            a {
+              color: black;
+            }
+          }
+
+          .hidden-container.show {
+            a {
+              all: unset;
+
+              &:hover {
+                cursor: pointer;
+                font-weight: 700;
+                transition: 0.1s;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//HOMEPAGE STYLING
+
+main {
+  .photo-container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("./assets/images/background3.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    .home-text-container {
+      position: absolute;
+      top: 200px;
+      left: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    
+
+    .main-headline {
+      font-size: 70px;
+      color: rgb(221, 221, 221);
+      font-weight: 700;
+      letter-spacing: 5px;
+    }
+
+    .title-desc {
+      color: rgb(148, 148, 148);
+      font-size: 20px;
+      font-weight: 500;
+      width: 700px;
+      line-height: 30px;
+      text-align: center;
+      letter-spacing: 2px;
+    }
+  }
+  }
 }

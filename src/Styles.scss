@@ -75,59 +75,67 @@ nav {
 
           &:hover {
             cursor: pointer;
-            font-weight: 700;
+            transition: 0.1s;
+            color: white;
+          }
+        }
+
+        .link {
+          color: $gray;
+          font-weight: 500;
+
+          &:hover {
+            cursor: pointer;
             transition: 0.1s;
             color: white;
           }
         }
         #ostalo {
           position: relative;
-          .hidden-container {
+
+          .hidden-div {
             position: absolute;
             top: 20;
             left: -20px;
             display: flex;
-            flex-direction: column;
-            gap: 20px;
-            width: 190px;
-            padding: 20px;
-            border-radius: 5px;
-            background-color: rgba(30, 30, 30, 0.8);
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            justify-content: center;
+            align-items: center;
+            padding-top: 30px;
+            background-color: transparent;
             visibility: hidden;
             transition: 0.5s;
             opacity: 0;
-            z-index: 4;
             scale: 0.5;
 
-            a {
-              all: unset;
-              color: $gray;
+            .hidden-container {
+              display: flex;
+              flex-direction: column;
+              gap: 20px;
+              width: 190px;
+              padding: 20px;
+              border-radius: 10px;
+              background-color: rgba(30, 30, 30, 0.95);
+              box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
-              &:hover {
-                cursor: pointer;
-                font-weight: 700;
-                transition: 0.1s;
+              a {
+                all: unset;
+                color: $gray;
+
+                &:hover {
+                  cursor: pointer;
+                  font-weight: 700;
+                  transition: 0.1s;
+                  color: white;
+                }
               }
             }
           }
 
-          .hidden-container.show {
+          .hidden-div.show {
             visibility: visible;
             transition: 0.5s;
             opacity: 1;
-            z-index: 4;
             scale: 1;
-
-            a {
-              all: unset;
-
-              &:hover {
-                cursor: pointer;
-                font-weight: 700;
-                transition: 0.1s;
-              }
-            }
           }
         }
       }
@@ -163,49 +171,42 @@ nav {
 nav.scroll {
   background-color: rgba(255, 255, 255, 0.323);
   backdrop-filter: blur(10px);
-  transition: 0.5s ease;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
+  
   .nav-container {
     .logo-container {
       .logoimg-container {
         background-image: url("https://www.iconbolt.com/iconsets/hawcons-stroke/soccer-court.svg");
-        transition: 0.5s ease;
       }
 
       .logo-headline {
         color: black;
-        transition: 0.5s ease;
       }
     }
 
     .navbar-right {
       .navbar-links {
         .nav-l {
-          transition: 0.5s ease;
+          transition: 0.1s;
           color: black;
 
           &:hover {
             transition: 0.5s ease;
           }
         }
+
+        .link {
+          color: black;
+        }
+
         #ostalo {
-          .hidden-container {
-            background-color: rgba(230, 230, 230, 0.9);
-            backdrop-filter: blur(2px);
-            a {
-              color: black;
-            }
-          }
+          .hidden-div {
+            .hidden-container {
+              background-color: rgba(255, 255, 255, 0.9);
+              
 
-          .hidden-container.show {
-            a {
-              all: unset;
-
-              &:hover {
-                cursor: pointer;
-                font-weight: 700;
-                transition: 0.1s;
+              a {
+                color: black;
               }
             }
           }
@@ -236,24 +237,23 @@ main {
       justify-content: center;
       align-items: center;
       flex-direction: column;
-    
 
-    .main-headline {
-      font-size: 70px;
-      color: rgb(221, 221, 221);
-      font-weight: 700;
-      letter-spacing: 5px;
-    }
+      .main-headline {
+        font-size: 70px;
+        color: rgb(221, 221, 221);
+        font-weight: 700;
+        letter-spacing: 5px;
+      }
 
-    .title-desc {
-      color: rgb(148, 148, 148);
-      font-size: 20px;
-      font-weight: 500;
-      width: 700px;
-      line-height: 30px;
-      text-align: center;
-      letter-spacing: 2px;
+      .title-desc {
+        color: rgb(148, 148, 148);
+        font-size: 20px;
+        font-weight: 500;
+        width: 700px;
+        line-height: 30px;
+        text-align: center;
+        letter-spacing: 2px;
+      }
     }
-  }
   }
 }

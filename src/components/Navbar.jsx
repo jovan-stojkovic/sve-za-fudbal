@@ -35,24 +35,28 @@ const Navbar = () => {
               <Link className="nav-l">O Nama</Link>
               <Link className="nav-l">Klubovi</Link>
               <Link className="nav-l">Baloni</Link>
-              <Link className="nav-l" id="ostalo" onMouseEnter={show} onMouseLeave={show}>
+              <div
+                id="ostalo"
+                onMouseEnter={show}
+                onMouseLeave={show}
+              >
                 <div className="navbar-link-container">
                   <p className="link">Ostalo</p>
 
                   <div
-                    className={`hidden-container ${
-                      showList === true ? "show" : ""
-                    }`}
+                    className={`hidden-div ${showList === true ? "show" : ""}`}
                   >
-                    <Link>Dečije Lige</Link>
-                    <Link>Amaterske Lige</Link>
-                    <Link>Dečiji Turniri</Link>
-                    <Link>Amaterski Turniri</Link>
-                    <Link>Kampovi i Pripreme</Link>
-                    <Link>Individualni Rad</Link>
+                    <div className="hidden-container">
+                      <Link>Dečije Lige</Link>
+                      <Link>Amaterske Lige</Link>
+                      <Link>Dečiji Turniri</Link>
+                      <Link>Amaterski Turniri</Link>
+                      <Link>Kampovi i Pripreme</Link>
+                      <Link>Individualni Rad</Link>
+                    </div>
                   </div>
                 </div>
-              </Link>
+              </div>
             </div>
 
             <div className="navbar-buttons">

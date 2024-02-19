@@ -6,10 +6,10 @@ import ThemeContext from "./helpers/ThemeContext";
 
 const App = () => {
   return (
-  <Router>
+    <Router>
       <Navbar />
       <Home />
-      </Router>
+    </Router>
   );
 };
 

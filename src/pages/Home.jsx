@@ -1,11 +1,12 @@
 const Home = () => {
+
   return (
     <main>
       <div className="photo-container">
         <div className="home-text-container">
           <h1 className="main-headline">SVE ZA FUDBAL.</h1>
           <p className="title-desc">
-            SVE VEZANO ZA NAJPOPULARNIJI SPORT NA SVETU, NA JEDNOM MESTU.
+            SVE VEZANO ZA NAJPOPULARNIJI SPORT NA SVETU NA JEDNOM MESTU.
             PRONAĐITE KLUB ZA SEBE ILI VAŠE DETE, PRONAĐITE BALON ZA FUDBAL I
             JOŠ MNOGO TOGA.
           </p>

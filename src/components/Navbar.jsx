@@ -24,9 +24,9 @@ const Navbar = () => {
       <nav className={scrolled}>
         <div className="nav-container">
           <div className="logo-container">
-            <a href="/">
+            <Link to="/">
               <div className="logoimg-container"></div>
-            </a>
+            </Link>
             <h1 className="logo-headline">sve za fudbal.</h1>
           </div>
 

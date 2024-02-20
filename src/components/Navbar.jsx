@@ -2,8 +2,15 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const Navbar = () => {
+  const serbianFlag = "./src/assets/flags/SRB.png";
+  const englishFlag = "./src/assets/flags/ENG.png";
+  const russianFlag = "./src/assets/flags/RUS.png";
+
   const [scrolled, setScrolled] = useState("");
   const [showList, setShowList] = useState(false);
+  const [language, setLanguage] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState("SRB");
+  const [flag, setFlag] = useState(serbianFlag);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -18,6 +25,24 @@ const Navbar = () => {
   const show = () => {
     setShowList(showList === false ? true : false);
   };
+
+  const showLanguage = () => {
+    setLanguage(language === false ? true : false);
+  };
+
+  const handleLanguageChange = (language) => {
+    setSelectedLanguage(language);
+  };
+
+  useEffect(() => {
+    if (selectedLanguage === "SRB") {
+      setFlag(serbianFlag);
+    } else if (selectedLanguage === "ENG") {
+      setFlag(englishFlag);
+    } else if (selectedLanguage === "RUS") {
+      setFlag(russianFlag);
+    }
+  }, [selectedLanguage]);
 
   return (
     <>
@@ -35,11 +60,7 @@ const Navbar = () => {
               <Link className="nav-l">O Nama</Link>
               <Link className="nav-l">Klubovi</Link>
               <Link className="nav-l">Baloni</Link>
-              <div
-                id="ostalo"
-                onMouseEnter={show}
-                onMouseLeave={show}
-              >
+              <div id="ostalo" onMouseEnter={show} onMouseLeave={show}>
                 <div className="navbar-link-container">
                   <p className="link">Ostalo</p>
 
@@ -60,10 +81,58 @@ const Navbar = () => {
             </div>
 
             <div className="navbar-buttons">
-              <button className="language-button">
-                <img src="./src/assets/flags/SRB.png" alt="SRB" />
-              </button>
-              <button className="theme-button">
+              <div
+                className="language-button navbar-button"
+                onMouseEnter={showLanguage}
+                onMouseLeave={showLanguage}
+              >
+                <img src={flag} alt={selectedLanguage} />
+
+                <div
+                  className={`hidden-language-div ${
+                    language === true ? "show" : ""
+                  }`}
+                >
+                  <form className="hidden-language-container">
+                    <label className="option option1">
+                      <input
+                        id="serbian"
+                        type="radio"
+                        value="SRB"
+                        checked={selectedLanguage === "SRB"}
+                        onChange={() => handleLanguageChange("SRB")}
+                      />
+                      <img src="./src/assets/flags/SRB.png" alt="SRB" />
+                      <p className="language">Srpski</p>
+                    </label>
+
+                    <label className="option option2">
+                      <input
+                        id="english"
+                        type="radio"
+                        value="ENG"
+                        checked={selectedLanguage === "ENG"}
+                        onChange={() => handleLanguageChange("ENG")}
+                      />
+                      <img src="./src/assets/flags/ENG.png" alt="ENG" />
+                      <p className="language">English</p>
+                    </label>
+
+                    <label className="option option3">
+                      <input
+                        id="russian"
+                        type="radio"
+                        value="RUS"
+                        checked={selectedLanguage === "RUS"}
+                        onChange={() => handleLanguageChange("RUS")}
+                      />
+                      <img src="./src/assets/flags/RUS.png" alt="RUS" />
+                      <p className="language">Русский</p>
+                    </label>
+                  </form>
+                </div>
+              </div>
+              <button className="theme-button navbar-button">
                 <img
                   src="https://www.iconbolt.com/iconsets/fluent-emoji-flat/sun.svg"
                   alt="Sun"

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import AboutUs from "../components/AboutUs";
+import Fields from "../components/Fields";
 import PopularClubs from "../components/PopularClubs";
 
 const Home = () => {
@@ -29,31 +30,8 @@ const Home = () => {
       </div>
       <div className="home-container">
         <PopularClubs />
+        <Fields />
         <AboutUs />
-
-        <div className="popular-fields">
-          <h2>Popularni Baloni</h2>
-
-          <div className="single-field">
-            <h3 className="club-headline">SC Gladiator</h3>
-            <div className="logo-container field1"></div>
-          </div>
-
-          <div className="single-field">
-            <h3 className="club-headline">El Maestro</h3>
-            <div className="logo-container field2"></div>
-          </div>
-
-          <div className="single-field">
-            <h3 className="club-headline">SC Aleksandar</h3>
-            <div className="logo-container field3"></div>
-          </div>
-
-          <div className="single-field">
-            <h3 className="club-headline">FK Lokomotiva</h3>
-            <div className="logo-container field4"></div>
-          </div>
-        </div>
       </div>
     </main>
   );

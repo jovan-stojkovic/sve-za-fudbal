@@ -1,1 +1,13 @@
-Headline fadeing in after 1000ms
+klubovi:
+grb svg ako moze
+lokacije
+termini
+godista
+kontakt
+osvnovne info (oslovani, broj dece, mozda neki igrac)
+
+baloni:
+lokacija
+dimenzije
+cena termina
+nesto spec lokal...

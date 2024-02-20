@@ -123,7 +123,6 @@ nav {
 
                 &:hover {
                   cursor: pointer;
-                  font-weight: 700;
                   transition: 0.1s;
                   color: white;
                 }
@@ -145,20 +144,81 @@ nav {
         align-items: center;
         gap: 20px;
 
-        button {
+        .navbar-button {
           all: unset;
           height: 20px;
           width: 20px;
           transition: 0.1s;
 
-          &:hover {
-            cursor: pointer;
-            scale: 1.1;
-            transition: 0.1s;
-          }
-
           img {
             height: 20px;
+            filter: brightness(90%);
+
+            &:hover {
+              filter: brightness(100%);
+              cursor: pointer;
+            }
+
+            &:active {
+              filter: brightness(100%);
+            }
+          }
+        }
+
+        .language-button {
+          position: relative;
+
+          .hidden-language-div {
+            position: absolute;
+            top: 5;
+            left: -20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 30px;
+            background-color: transparent;
+            visibility: hidden;
+            transition: 0.5s;
+            opacity: 0;
+            scale: 0.5;
+
+            .hidden-language-container {
+              display: flex;
+              flex-direction: column;
+              gap: 20px;
+              width: 190px;
+              padding: 20px;
+              border-radius: 10px;
+              background-color: rgba(30, 30, 30, 0.95);
+              box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+              .option {
+                display: flex;
+                gap: 10px;
+
+                .language {
+                  color: $gray;
+
+                  &:hover {
+                    cursor: pointer;
+                    transition: 0.1s;
+                    color: white;
+                  }
+                }
+
+                input {
+                  all: unset;
+                  color: $gray;
+                }
+              }
+            }
+          }
+
+          .hidden-language-div.show {
+            visibility: visible;
+            transition: 0.5s;
+            opacity: 1;
+            scale: 1;
           }
         }
       }
@@ -269,6 +329,8 @@ main {
   padding-top: 40px;
 }
 
+//POPULAR CLUBS
+
 .popular-clubs {
   height: 640px;
   position: relative;
@@ -328,23 +390,23 @@ main {
     }
 
     .club1 {
-      background-image: url("./assets/logos/Zarkovo.jpeg");
+      background-image: url("./assets/logos/zarkovo.jpg");
     }
 
     .club2 {
-      background-image: url("./assets/logos/Olimpik.png");
+      background-image: url("./assets/logos/olimpik.jpg");
     }
 
     .club3 {
-      background-image: url("./assets/logos/Dusanovac.png");
+      background-image: url("./assets/logos/dusanovac.jpg");
     }
 
     .club4 {
-      background-image: url("./assets/logos/Fairplay.jpeg");
+      background-image: url("./assets/logos/fairplay.jpg");
     }
 
     .club5 {
-      background-image: url("./assets/logos/Atacante.jpeg");
+      background-image: url("./assets/logos/atacante.jpg");
     }
   }
 
@@ -367,20 +429,145 @@ main {
       box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
         rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 
-        &:hover {
-          scale: 1.05;
-          transition: 0.2s ease;
-          cursor: pointer;
-          box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-            rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-      background-color: rgb(102, 102, 171);
-          
-        }
-  
-        &:active {
-          box-shadow: 0 3px #0000001e;
-          transform: translateY(1px);
-        }
+      &:hover {
+        scale: 1.05;
+        transition: 0.2s ease;
+        cursor: pointer;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+          rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        background-color: rgb(102, 102, 171);
+      }
+
+      &:active {
+        box-shadow: 0 3px #0000001e;
+        transform: translateY(1px);
+      }
+    }
+  }
+}
+
+.popular-fields {
+  height: 640px;
+  position: relative;
+
+  h2 {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+
+  .popular-fields-grid {
+    display: grid;
+    grid-template-columns: 18% 18% 18% 18% 18%;
+    justify-content: space-between;
+
+    .single-field {
+      background-position: center;
+      background-size: cover;
+      filter: grayscale(70%);
+      height: 220px;
+      border-radius: 50px;
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      margin-bottom: 20px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+        rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+      transition: 0.2s ease;
+
+      &:hover {
+        scale: 1.02;
+        transition: 0.2s ease;
+        cursor: pointer;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+          rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        filter: grayscale(0%);
+      }
+
+      &:active {
+        box-shadow: 0 3px #0000001e;
+        transform: translateY(1px);
+      }
+
+      .field-headline {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 45px;
+        font-size: 22px;
+        font-weight: 500;
+        color: white;
+        width: 100%;
+        background-color: rgba(191, 189, 189, 0.235);
+        backdrop-filter: blur(2px);
+        height: 40px;
+      }
+    }
+
+    .field1 {
+      background-image: url("./assets/fields/gladijator.jpg");
+    }
+    .field2 {
+      background-image: url("./assets/fields/classics.jpg");
+    }
+    .field3 {
+      background-image: url("./assets/fields/coin.jpg");
+    }
+    .field4 {
+      background-image: url("./assets/fields/enfield.jpg");
+    }
+    .field5 {
+      background-image: url("./assets/fields/fortis.jpg");
+    }
+    .field6 {
+      background-image: url("./assets/fields/imperija.jpg");
+    }
+    .field7 {
+      background-image: url("./assets/fields/juzni.jpg");
+    }
+    .field8 {
+      background-image: url("./assets/fields/milvol.jpg");
+    }
+    .field9 {
+      background-image: url("./assets/fields/top-spin.jpg");
+    }
+    .field10 {
+      background-image: url("./assets/fields/zlatna-lopta.jpg");
+    }
+  }
+
+  .show-all-button {
+    all: unset;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    button {
+      all: unset;
+      font-weight: 500;
+      height: 40px;
+      width: 150px;
+      background-color: rgb(41, 41, 86);
+      color: white;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+        rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+      &:hover {
+        scale: 1.05;
+        transition: 0.2s ease;
+        cursor: pointer;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+          rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        background-color: rgb(102, 102, 171);
+      }
+
+      &:active {
+        box-shadow: 0 3px #0000001e;
+        transform: translateY(1px);
+      }
     }
   }
 }

@@ -265,10 +265,43 @@ nav.scroll {
               background-color: rgba(255, 255, 255, 0.9);
 
               a {
-                color: black;
+                color: rgb(61, 61, 61);
+
+                &:hover {
+                  color: black;
+                }
               }
             }
           }
+        }
+      }
+
+      .language-button {
+        .hidden-language-div {
+          .hidden-language-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            .option {
+              .language {
+                color: rgb(61, 61, 61);
+
+                &:hover {
+                  color: black;
+                }
+              }
+
+              input {
+                all: unset;
+                color: $gray;
+              }
+            }
+          }
+        }
+
+        .hidden-language-div.show {
+          visibility: visible;
+          transition: 0.5s;
+          opacity: 1;
+          scale: 1;
         }
       }
     }
@@ -542,6 +575,89 @@ main {
     bottom: 10px;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    button {
+      all: unset;
+      font-weight: 500;
+      height: 40px;
+      width: 150px;
+      background-color: rgb(41, 41, 86);
+      color: white;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+        rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+      &:hover {
+        scale: 1.05;
+        transition: 0.2s ease;
+        cursor: pointer;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+          rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        background-color: rgb(102, 102, 171);
+      }
+
+      &:active {
+        box-shadow: 0 3px #0000001e;
+        transform: translateY(1px);
+      }
+    }
+  }
+}
+
+//ABOUT US
+.about-us {
+  display: flex;
+  height: 700px;
+  gap: 50px;
+  padding: 50px;
+
+  .about-us-image {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+    .about-us-image-container {
+      background-image: url("./assets/images/background4.jpg");
+      background-position: center;
+      background-size: contain;
+      height: 100%;
+      width: 100%;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+        rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+      border-radius: 20px;
+    }
+  }
+
+  .about-us-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: space-between;
+
+    h2 {
+      font-size: 25px;
+      font-weight: 700;
+    }
+
+    .about-us-text {
+      height: 75%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      p {
+        letter-spacing: 1px;
+        line-height: 22px;
+        text-align: justify;
+        font-weight: 300;
+        font-size: 1rem;
+      }
+    }
 
     button {
       all: unset;

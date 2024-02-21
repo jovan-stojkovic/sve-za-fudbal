@@ -608,17 +608,16 @@ main {
 //ABOUT US
 .about-us {
   display: flex;
-  height: 700px;
+  height: 600px;
   gap: 50px;
-  padding: 50px;
+  margin-bottom: 50px;
 
   .about-us-image {
     height: 100%;
-    width: 100%;
+    width: 70%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
 
     .about-us-image-container {
       background-image: url("./assets/images/background4.jpg");
@@ -652,10 +651,10 @@ main {
 
       p {
         letter-spacing: 1px;
-        line-height: 22px;
+        line-height: 25px;
         text-align: justify;
         font-weight: 300;
-        font-size: 1rem;
+        font-size: 1.1rem;
       }
     }
 

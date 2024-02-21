@@ -46,7 +46,7 @@ const Navbar = () => {
 
   const scrollToPosition = () => {
     window.scrollTo({
-      top: 1985,
+      top: 1932,
       behavior: "smooth",
     });
   };

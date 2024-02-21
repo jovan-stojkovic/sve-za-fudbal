@@ -58,7 +58,7 @@ const PopularClubs = () => {
       </div>
 
       <Link to="/clubs" className="show-all-button">
-      <button>Pokaži sve</button>
+      <button>Pretraži detaljno</button>
       </Link>
     </div>
   );

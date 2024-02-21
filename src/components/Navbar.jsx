@@ -50,6 +50,7 @@ const Navbar = () => {
       behavior: "smooth",
     });
   };
+  
   return (
     <>
       <nav className={scrolled}>
@@ -66,7 +67,7 @@ const Navbar = () => {
               <Link className="nav-l" onClick={() => scrollToPosition()}>
                 O Nama
               </Link>
-              <Link className="nav-l">Klubovi</Link>
+              <Link className="nav-l" to="/clubs">Klubovi</Link>
               <Link className="nav-l">Baloni</Link>
               <div id="ostalo" onMouseEnter={show} onMouseLeave={show}>
                 <div className="navbar-link-container">

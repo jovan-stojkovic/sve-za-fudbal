@@ -15,7 +15,7 @@ const Home = () => {
   }, []);
 
   return (
-    <main>
+    <div className="home">
       <div className="photo-container">
         <div className="home-text-container">
           <h1 className={`main-headline ${isVisible ? "visible" : ""}`}>
@@ -33,7 +33,7 @@ const Home = () => {
         <Fields />
         <AboutUs />
       </div>
-    </main>
+    </div>
   );
 };
 

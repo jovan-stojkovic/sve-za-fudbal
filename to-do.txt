@@ -11,3 +11,6 @@ lokacija
 dimenzije
 cena termina
 nesto spec lokal...
+
+
+o nama scroll on other pages, switch na naslovnu pa dole

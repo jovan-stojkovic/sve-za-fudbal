@@ -649,6 +649,7 @@ main {
     flex-direction: column;
     align-items: baseline;
     justify-content: space-between;
+    position: relative;
 
     h2 {
       font-size: 25px;
@@ -695,6 +696,100 @@ main {
         box-shadow: 0 3px #0000001e;
         transform: translateY(1px);
       }
+    }
+
+    .question-div {
+      position: absolute;
+      bottom: 40px;
+      right: -100px;
+      height: 400px;
+      width: 300px;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 5px;
+      padding: 35px;
+      border-radius: 20px 20px 20px 0;
+      transition: 0.2s ease;
+      visibility: hidden;
+      opacity: 0;
+
+      .question-name-input {
+        background-color: rgb(255, 255, 255);
+        height: 30px;
+        width: 100%;
+        border-radius: 10px;
+        padding: 5px;
+        border: 2px white solid;
+        font-size: 15px;
+
+        &:hover {
+          border: 2px black solid;
+        }
+        &:focus {
+          border: 2px green solid;
+        }
+      }
+
+      .question-area {
+        background-color: white;
+        text-align: left;
+        height: 220px;
+        width: 100%;
+        padding: 5px;
+        border-radius: 10px;
+        border: 2px solid white;
+        font-size: 15px;
+
+        &:hover {
+          border: 2px black solid;
+        }
+        &:focus {
+          border: 2px green solid;
+        }
+      }
+
+      .error-p {
+        width: 100%;
+        text-align: left;
+        font-size: 13px;
+        color: rgb(255, 37, 37);
+        font-weight: 500;
+      }
+
+      #close {
+        all: unset;
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        background-color: rgba(255, 0, 0, 0.561);
+        height: 20px;
+        width: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100px;
+        transition: 0.2s ease;
+        border: 2px black solid;
+
+        &:hover {
+          transition: 0.2s ease;
+          cursor: pointer;
+          background-color: red;
+        }
+      }
+    }
+
+    .question-div.show {
+      right: 0px;
+      visibility: visible;
+      opacity: 1;
     }
   }
 }

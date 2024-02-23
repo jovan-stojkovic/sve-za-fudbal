@@ -5,6 +5,7 @@ termini
 godista
 kontakt
 osvnovne info (oslovani, broj dece, mozda neki igrac)
+slike trenera igraca trofeji zanimljivosti
 
 baloni:
 lokacija
@@ -14,3 +15,7 @@ nesto spec lokal...
 
 
 o nama scroll on other pages, switch na naslovnu pa dole
+
+prime react form
+
+hover language flag and text together

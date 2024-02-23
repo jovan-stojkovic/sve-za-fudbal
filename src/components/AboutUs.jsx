@@ -1,4 +1,12 @@
+import { useState } from "react";
+
 const AboutUs = () => {
+  const [showQuestion, setShowQuestion] = useState('');
+
+  const handleQuestionButton = () => {
+    setShowQuestion(showQuestion === '' ? 'show' : '');
+  };
+
   return (
     <>
       <div className="about-us">
@@ -33,7 +41,30 @@ const AboutUs = () => {
               roku.
             </p>
           </div>
-          <button>Postavite pitanje</button>
+          <button onClick={handleQuestionButton}>Postavite pitanje</button>
+
+          <div className={`question-div ${showQuestion}`}>
+            <input
+              type="text"
+              placeholder="Vaše Ime"
+              className="question-name-input"
+            />
+            <p className="error-p">Molim Vas upišite Vaše ime</p>
+            <textarea
+              placeholder="Postavite pitanje"
+              className="question-area"
+              cols="10"
+              rows="6"
+            ></textarea>
+            <p className="error-p">Postavite pitanje</p>
+            <button className="question-submit">Pošalji</button>
+            <button id="close" onClick={handleQuestionButton}>
+              <img
+                src="https://www.iconbolt.com/iconsets/charm-icons/cross.svg"
+                alt="x"
+              />
+            </button>
+          </div>
         </div>
       </div>
     </>

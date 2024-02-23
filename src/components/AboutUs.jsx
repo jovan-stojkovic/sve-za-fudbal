@@ -1,10 +1,15 @@
 import { useState } from "react";
 
 const AboutUs = () => {
-  const [showQuestion, setShowQuestion] = useState('');
+  const [showQuestion, setShowQuestion] = useState("");
+  const [sent, setSent] = useState("");
 
   const handleQuestionButton = () => {
-    setShowQuestion(showQuestion === '' ? 'show' : '');
+    setShowQuestion(showQuestion === "" ? "show" : "");
+  };
+
+  const handleSendButton = () => {
+    setSent("sent");
   };
 
   return (
@@ -44,26 +49,40 @@ const AboutUs = () => {
           <button onClick={handleQuestionButton}>Postavite pitanje</button>
 
           <div className={`question-div ${showQuestion}`}>
-            <input
-              type="text"
-              placeholder="Vaše Ime"
-              className="question-name-input"
-            />
-            <p className="error-p">Molim Vas upišite Vaše ime</p>
-            <textarea
-              placeholder="Postavite pitanje"
-              className="question-area"
-              cols="10"
-              rows="6"
-            ></textarea>
-            <p className="error-p">Postavite pitanje</p>
-            <button className="question-submit">Pošalji</button>
-            <button id="close" onClick={handleQuestionButton}>
-              <img
-                src="https://www.iconbolt.com/iconsets/charm-icons/cross.svg"
-                alt="x"
+            <div className={`question-container ${sent}`}>
+              <input
+                type="email"
+                placeholder="Vaše email adresa"
+                className="question-name-input"
               />
-            </button>
+              <p className="error-p email-error">
+                Molim Vas upišite Vašu email adresu
+              </p>
+              <textarea
+                placeholder="Postavite pitanje"
+                className="question-area"
+                cols="10"
+                rows="6"
+              ></textarea>
+              <p className="error-p question-error">Polje ne sme biti prazno</p>
+              <button className="question-submit" onClick={handleSendButton}>
+                Pošalji
+              </button>
+              <button id="close" onClick={handleQuestionButton}>
+                <img
+                  src="https://www.iconbolt.com/iconsets/charm-icons/cross.svg"
+                  alt="x"
+                />
+              </button>
+            </div>
+            <div className={`question-success ${sent}`}>
+              <div className="success-img-container"></div>
+              <p className="question-success-p">
+                Pitanje je prosleđeno našem timu. Očekujte odgovor u najkraćem
+                roku!
+              </p>
+              <button className="question-close" onClick={handleQuestionButton}>Zatvori</button>
+            </div>
           </div>
         </div>
       </div>
